@@ -1,6 +1,7 @@
 import { View, Text } from 'react-native'
 import React, { useEffect } from 'react'
 import SplashScreen from 'react-native-splash-screen'
+import Init_Routes from './routes/Init_Routes'
 
 const Main = () => {
     useEffect(() => {
@@ -12,9 +13,7 @@ const Main = () => {
     }, [])
     
   return (
-    <View>
-      <Text>Main</Text>
-    </View>
+    <Init_Routes/>
   )
 }
 
