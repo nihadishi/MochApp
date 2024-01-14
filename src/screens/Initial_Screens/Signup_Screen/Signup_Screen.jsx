@@ -105,7 +105,7 @@ const Signup_Screen = ({navigation}) => {
 
         <View style={styles.goTo}>
           <Text style={styles.goToText}>Already have an account?</Text>
-          <TouchableHighlight onPress={()=>navigation.navigate("Login")} underlayColor={"transparent"}>
+          <TouchableHighlight onPress={()=>navigation.goBack()} underlayColor={"transparent"}>
             <Text style={[styles.goToText, styles.goToLogin]}>Log in</Text>
           </TouchableHighlight>
         </View>
