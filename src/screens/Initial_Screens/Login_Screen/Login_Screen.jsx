@@ -1,4 +1,10 @@
-import {View, Text, TextInput, TouchableHighlight, ScrollView} from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableHighlight,
+  ScrollView,
+} from 'react-native';
 import React, {useState} from 'react';
 import {styles} from './styles';
 import CheckBox from '@react-native-community/checkbox';
@@ -53,6 +59,9 @@ const Login_Screen = ({navigation}) => {
       </TouchableHighlight>
     );
   };
+  const handleSubmit = value => {
+    navigation.navigate('Main');
+  };
   return (
     <ScrollView style={styles.main}>
       <Text style={styles.mainText}>Log in</Text>
@@ -63,7 +72,7 @@ const Login_Screen = ({navigation}) => {
           <TextInput
             style={styles.inputTextInput}
             value={inputDatas.email}
-            cursorColor={"#732BAC"}
+            cursorColor={'#732BAC'}
             onChangeText={handleEmailChange}
             keyboardType="email-address"
             inputMode="email"
@@ -75,7 +84,7 @@ const Login_Screen = ({navigation}) => {
             <TextInput
               style={styles.inputTextInput}
               value={inputDatas.password}
-              cursorColor={"#732BAC"}
+              cursorColor={'#732BAC'}
               onChangeText={handlePaswdChange}
               secureTextEntry={showPassword}
             />
@@ -114,13 +123,15 @@ const Login_Screen = ({navigation}) => {
       </View>
 
       <View style={styles.inputArea}>
-        <TouchableHighlight>
+        <TouchableHighlight underlayColor={'transparent'} onPress={handleSubmit}>
           <Text style={styles.confirm}>Continue</Text>
         </TouchableHighlight>
 
         <View style={styles.goTo}>
           <Text style={styles.goToText}>Don't have an account?</Text>
-          <TouchableHighlight onPress={()=>navigation.navigate("Signup")} underlayColor={"transparent"}>
+          <TouchableHighlight
+            onPress={() => navigation.navigate('Signup')}
+            underlayColor={'transparent'}>
             <Text style={[styles.goToText, styles.goToSignup]}>Sign up</Text>
           </TouchableHighlight>
         </View>

@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import Login_Screen from '../screens/Initial_Screens/Login_Screen/Login_Screen';
 import Signup_Screen from '../screens/Initial_Screens/Signup_Screen/Signup_Screen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Main_Routes from './Main_Routes';
 const Stack = createNativeStackNavigator();
 const Init_Routes = () => {
   const screens = [
@@ -15,6 +16,11 @@ const Init_Routes = () => {
     {
       name: 'Signup',
       component: Signup_Screen,
+      options:{ ...MyCustomTransition, headerShown: false },
+    },
+    {
+      name: 'Main',
+      component: Main_Routes,
       options:{ ...MyCustomTransition, headerShown: false },
     },
   ];
